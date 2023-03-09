@@ -1,7 +1,8 @@
 import * as actionTypes from "./actionTypes"
 
-export const fillArray  = () => {
+export const fillArray  = (maxNumber: number) => {
     return {
-        type: actionTypes.FILL_ARRAY
+        type: actionTypes.FILL_ARRAY,
+        maxNumber,
     }
 }

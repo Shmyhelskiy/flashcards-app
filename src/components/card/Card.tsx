@@ -2,19 +2,27 @@ import { FC, useEffect, useState } from 'react';
 import styles from "./Card.module.css"
 import * as func from "../../functions/Math.functions"
 import Box from '../Box/Box';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from "../../store/actionCreators"
+
 
 
 const Card: FC = () => {
   const [numberA, setNumberA] = useState(0)
   const [numberB, setNumberB] = useState(0)
-    let result = func.multiplication(numberA, numberB)
+  const data: NumbersState = useSelector(state => state)
+  console.log(data.numberA);
+  
+  const dispatch = useDispatch();
 
 useEffect (() => {
     setNumberA(func.rundomNumber(10))
     setNumberB(func.rundomNumber(10))
+    dispatch(actions.fillArray(10))
+
 }, [])
 
-console.log(func.createVariants(result));
+// console.log(numbersArray);
 
     return (
         <div className={styles["wrapper"]}>

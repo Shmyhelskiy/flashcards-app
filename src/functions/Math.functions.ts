@@ -1,5 +1,5 @@
 export const rundomNumber = (max: number) => {
-    const number = Math.round(Math.random() * (max - 1) + 1)
+    const number: number = Math.round(Math.random() * (max - 1) + 1)
     return number
 }
 

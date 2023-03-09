@@ -1,16 +1,9 @@
 import { createStore } from 'redux'
 import {FILL_ARRAY} from "./actionTypes"
+import * as func from "../functions/Math.functions"
 
-type NumbersState = {
-    numbers: number[],
-    numberA: null | number,
-    numberB: null | number,
-}
 
-type NumberAction = {
-    type: string,
-    payload?: any,
-}
+
 
 const initialState: NumbersState = {
     numbers: [],
@@ -18,15 +11,20 @@ const initialState: NumbersState = {
     numberB: null,
 }
 
-const  rootReducer = (state = initialState, action: NumberAction): NumbersState | undefined =>{
+const  rootReducer = (state = initialState, action: NumberAction): NumbersState =>{
 switch (action.type) {
     case FILL_ARRAY: {
-        console.log("done")
-        return { 
-            numbers: [],
-            numberA: null,
-            numberB: null,
+
+        const numberA = func.rundomNumber(action.maxNumber);
+        const numberB = func.rundomNumber(action.maxNumber);
+        const answer = func.multiplication(numberA, numberB)
+        const numbers = func.createVariants(answer)
+        const result = {
+            numbers,
+            numberA,
+            numberB
         }
+        return result
     }
     default:
         return state
