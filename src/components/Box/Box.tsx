@@ -1,6 +1,14 @@
+import { FC } from "react";
 
-const Box = () => {
-    return  <span>25</span>
+
+type BoxProps = {
+ number: number,
+ disabled: boolean | undefined,
+ onClick: () => {}
+}
+
+const Box: FC<BoxProps> = ({number,disabled,  onClick}) => {
+    return  <button  disabled={disabled} onClick={onClick}>{number}</button>
 };
 
 export default Box;

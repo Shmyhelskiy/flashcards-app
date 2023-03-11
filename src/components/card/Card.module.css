@@ -64,10 +64,41 @@
 .numbers-bottom div {
   gap: 8px;
   display: flex;
+  width: 100%;
 }
 
-.numbers-bottom span {
+.numbers-bottom button {
+  width: 33%;
+  border: none;
   display: block;
   font-size: 4rem;
   font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #ffebbe;
+}
+.numbers-bottom button:hover {
+  cursor: pointer;
+}
+.numbers-bottom button:active {
+  background-color: rgb(78, 69, 207);
+}
+.numbers-bottom button:disabled {
+  background-color: #ffebbe;
+}
+.again {
+  padding: 3px;
+  border-radius: 10px;
+  color: #ffebbe;
+  background-color: rgb(78, 69, 207);
+}
+.again:hover {
+  cursor: pointer;
+}
+
+.wrong {
+  color: red;
+}
+.right {
+  color: rgb(78, 69, 207);
 }

@@ -1,8 +1,17 @@
-import * as actionTypes from "./actionTypes"
+export const FILL_ARRAY = "FILL_ARRAY"
+export const CHECK_ANSWER = "CHECK_ANSWER"
+export const REFRESH_CARD = "REFRESH_CARD"
 
-export const fillArray  = (maxNumber: number) => {
+export const fillArray  = (number: number) => {
     return {
-        type: actionTypes.FILL_ARRAY,
-        maxNumber,
+        type: FILL_ARRAY,
+        number,
     }
+}
+
+export const giveResult = (number:number) =>{
+    return {
+        type: CHECK_ANSWER,
+        number
+    } 
 }

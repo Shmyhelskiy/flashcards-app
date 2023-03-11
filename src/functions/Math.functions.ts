@@ -1,24 +1,26 @@
+// create random number
 export const rundomNumber = (max: number) => {
     const number: number = Math.round(Math.random() * (max - 1) + 1)
     return number
 }
-
+// create answer
 export const multiplication = (a:number, b:number) => {
     return a * b
 }
-
+// create array of variants 
 export const createVariants = (answer: number) =>{
-    const arr = [];
-    for ( let i = 1; i < 6; i++){
-        let number = rundomNumber(5)
-        i >= 3 ? arr.push(answer - number) : arr.push(answer + number)
-
-    }
+    const arr: number[] = [];
     arr.push(answer)
+    while ( arr.length < 6){
+        let randomNumber = rundomNumber(answer)
+        if ( !arr.includes(randomNumber)){
+            arr.push(randomNumber)
+        }
+    }
 
     return createTwoDimensionalArray(shuffle(arr))
 }
-
+// mix array
  const  shuffle = (array : number[]) => {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); 
@@ -26,7 +28,7 @@ export const createVariants = (answer: number) =>{
       }
       return array
   }
-  
+// creat a two-dimensional array
 const createTwoDimensionalArray = (array: number[]) => {
     const result = [];
     for (let i = 0; i < array.length; i += 3) {
@@ -34,3 +36,4 @@ const createTwoDimensionalArray = (array: number[]) => {
       }
       return result
 }
+
