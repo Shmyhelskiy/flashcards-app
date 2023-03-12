@@ -1,4 +1,4 @@
-import { FC} from 'react';
+import { FC } from 'react';
 import styles from "./Card.module.css"
 import Box from '../Box/Box';
 import { useSelector, useDispatch} from 'react-redux';
