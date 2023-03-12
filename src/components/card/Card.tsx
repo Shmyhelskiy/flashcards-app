@@ -10,7 +10,7 @@ const Card: FC = () => {
   const dispatch = useDispatch();
 
   const handleClick = () =>{
-      dispatch(fillArray(100))
+      dispatch(fillArray(10))
   }
 
   return (
