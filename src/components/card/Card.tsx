@@ -21,32 +21,32 @@ const Card: FC = () => {
                 </div>
                 <div className={styles["container-top-right"]}>
                     <div className={styles["container-top-right-top"]}>
-                    <span className={styles["numbers-top"]}>{data.numberA}</span>
+                    <span className={styles["numbers-top"]}>{data.mathState.numberA}</span>
                     </div>
                     <div>
-                    <span className={styles["numbers-top"]}>{data.numberB}</span>
+                    <span className={styles["numbers-top"]}>{data.mathState.numberB}</span>
                     </div>
                 </div>
             </div>
             <div className={styles["container-bottom"]}>
                 <div className={styles["container-bottom-top"]}>
                
-                { data.isRight === undefined ? (
+                { data.mathState.isRight === undefined ? (
                         <span className={styles["wrong"]}></span> 
-                    ) : !data.isRight ? (
+                    ) : !data.mathState.isRight ? (
                         <span className={styles["wrong"]}>Wrong</span> 
                     ) : <span className={styles["right"]}>Correct</span>}
 
-                    { data.isRight === undefined || !data.isRight  ? (
+                    { data.mathState.isRight === undefined || !data.mathState.isRight  ? (
                         <span>Choose Your Answer</span> 
                     ) : <span className={styles["again"]} onClick={handleClick}>Play again?</span>}
                 </div>
                 <div className={styles["numbers-bottom"]}> 
                     <div>
-                        {data.numbers[0].map(item => <Box disabled={data.isRight}number={item} key={item} onClick={()=> dispatch(giveResult(item))}/>)}
+                        {data.mathState.numbers[0].map(item => <Box disabled={data.mathState.isRight}number={item} key={item} onClick={()=> dispatch(giveResult(item))}/>)}
                     </div>
                     <div>
-                    {data.numbers[1].map(item => <Box  disabled={data.isRight} number={item} key={item} onClick={()=> dispatch(giveResult(item))}/>)}
+                    {data.mathState.numbers[1].map(item => <Box  disabled={data.mathState.isRight} number={item} key={item} onClick={()=> dispatch(giveResult(item))}/>)}
                     </div>
                 </div>
             </div>

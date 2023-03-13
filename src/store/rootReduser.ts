@@ -7,11 +7,15 @@ import { FILL_ARRAY, CHECK_ANSWER} from "./actionCreators"
 
 
 const initialState: NumbersState = {
-    numbers: [[],[]],
-    numberA: null,
-    numberB: null,
-    answer: 0,
-    isRight: undefined
+    mathState: {
+        numbers: [[],[]],
+        numberA: null,
+        numberB: null,
+        answer: 0,
+        isRight: undefined,
+    },
+    score: 0,
+    attempts: 0,
 }
 
 const  rootReducer = (state = initialState, action: NumberAction): NumbersState =>{
@@ -30,10 +34,18 @@ switch (action.type) {
             isRight: undefined
         }
   
-         return result
+         return {...state, mathState: result}
     }
     case CHECK_ANSWER: {
-    return {...state, isRight: checkAnswer(action.number, state.answer)}
+        const copyState = {...state}
+        copyState.mathState.isRight = checkAnswer(action.number, state.mathState.answer)
+            if ( copyState.mathState.isRight) {
+                copyState.score++;
+                copyState.attempts++;
+            } else copyState.attempts++
+
+
+        return copyState
     }
 
     default:

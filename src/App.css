@@ -3,4 +3,15 @@ body {
   justify-content: center;
   background-color: #576380;
 }
+.wrapper {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+}
 
+.wrapper div {
+  color: #ffebbe;
+  font-size: 2em;
+}
