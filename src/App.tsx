@@ -10,9 +10,6 @@ function App() {
 useEffect (() => {
     dispatch(fillArray(10))
 }, [dispatch])
-
-console.log(data);
-
   return (
     <div className="App">
       <div className="wrapper">

@@ -1,0 +1,12 @@
+.MyClassEnterActive {
+  background-color: red;
+}
+.MyClassEnterDone {
+  background-color: blue;
+}
+.MyClassExit {
+  background-color: green;
+}
+.MyClassExitActive {
+  background-color: black;
+}
